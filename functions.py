@@ -36,7 +36,7 @@ def append_list_preserve_extremum(arr, v):
         if v >= arr[-1]:
             arr.append(v)
         else:
-arr.insert(-1, v)
+            arr.insert(-1, v)
 
 
 def get_human_size(n):
@@ -49,7 +49,7 @@ def get_human_size(n):
     while n//1024 > 0 and i < 3:
         n = n/1024
         i += 1
-return format(n, '.2f') + ' ' + units[i]
+    return format(n, '.2f') + ' ' + units[i]
 
 
 def text_abstract(text, site=None):
@@ -80,4 +80,4 @@ def text_abstract(text, site=None):
     # uri默认抽象规则(耗时仅为原逻辑的1/3)
     for i in re.findall('/[0-9_-]+(?=[/.]|$)', uri):
         uri = uri.replace(i, '/*', 1)
-return uri, re.sub('=[^&=]+', '=*', args)
+    return uri, re.sub('=[^&=]+', '=*', args)
