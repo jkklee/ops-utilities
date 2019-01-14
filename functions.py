@@ -22,21 +22,22 @@ def get_quartile(data):
 
 def append_list_preserve_extremum(arr, v):
     """
-    对数值型列表的追加过程加入对最大值(index: -1)的维护
+    对数值型列表的追加过程加入对最大值(index:-1)/最小值(index:-2)的维护
     对于需要频繁调用max()方法的场景可大幅提高性能
     arr: 要操作的列表
     v: 要加入的值
     """
-    if len(arr) == 1:
-        if v >= arr[0]:
-            arr.append(v)
-        else:
-            arr.insert(0, v)
-    else:
+    if len(arr) > 0:
         if v >= arr[-1]:
+            if len(arr) > 1:
+                arr[-1], arr[-2] = arr[-2], arr[-1]
             arr.append(v)
-        else:
+        elif v <= arr[-2 if len(arr)>1 else -1]:
             arr.insert(-1, v)
+        else:
+            arr.insert(-2, v)
+    else:
+        arr.append(v)
 
 
 def get_human_size(n):
