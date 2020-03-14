@@ -13,7 +13,7 @@ This project is a collection of **scripts(shell or python)** and **python code s
     [functions.get_quartile()](https://github.com/jkklee/Ljk-ops-utilities/blob/master/functions.py#L7)
 5. 对uri和args进行抽象化,利于分类  
         默认规则:  
-        - uri中若 两个`/`之间 或 `/`和`.`之间仅由`0-9或-或_`组成,则将其抽象为'\*'  
+        - uri中若 两个`/`之间 或 `/`和`.`之间仅由正则`[0-9或-_]+`组成,则将其抽象为'\*'  
         - args中所有参数的值抽象为'\*'  
     [functions.text_abstract()](https://github.com/jkklee/Ljk-ops-utilities/blob/master/functions.py#L56)
  
