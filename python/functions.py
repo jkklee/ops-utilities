@@ -53,6 +53,8 @@ def get_human_size(n):
     return format(n, '.2f') + ' ' + units[i]
 
 
+import re
+from urllib.parse import unquote
 def text_abstract(text, site=None):
     """
     对uri和args进行抽象化,利于分类
@@ -60,13 +62,13 @@ def text_abstract(text, site=None):
         uri中若 两个'/'之间 或 '/'和'.'之间仅由"0-9或-或_"组成,则将其抽象为'*'
         args中所有参数的值抽象为'*'
     text: 待处理的内容
-    site: 站点名称
+    site: 站点名称, 配合配置文件中的abs_special来控制指定站点的特殊规则
     """
     uri_args = text.split('?', 1)
     uri = unquote(uri_args[0])
     args = '' if len(uri_args) == 1 else unquote(uri_args[1])
     # 特殊抽象规则
-    if site in abs_special:
+    if site and site in abs_special:
         for uri_pattern in abs_special[site]:
             if re.search(uri_pattern, uri):
                 if 'uri_replace' in abs_special[site][uri_pattern]:
