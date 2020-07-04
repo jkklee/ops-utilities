@@ -58,8 +58,8 @@ This project is a collection of **scripts(shell or python)** and **python code s
 	('/user/article/*', 'commentid=*')
     ```
  6. 监控服务器网卡流量，可同时监控多块网卡  
-     [python.netflow-statics.py](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/netflow-statics.py)
-     ![1](https://s1.51cto.com/wyfs02/M02/81/FD/wKiom1dGuoqS6honAAA8gQMh4e8068.png)
-     ![2](https://s2.51cto.com/wyfs02/M02/81/FC/wKioL1dGu5HDfYfbAABaNXTdogo428.png)
+     [python.netflow-statics.py](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/netflow-statics.py)  
+     ![1](https://s1.51cto.com/wyfs02/M02/81/FD/wKiom1dGuoqS6honAAA8gQMh4e8068.png)  
+     ![2](https://s2.51cto.com/wyfs02/M02/81/FC/wKioL1dGu5HDfYfbAABaNXTdogo428.png)  
 
  
