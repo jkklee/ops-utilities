@@ -49,7 +49,7 @@ This project is a collection of **scripts(shell or python)** and **python code s
         默认规则:  
         - uri中若 两个`/`之间 或 `/`和`.`之间仅由正则`[0-9或-_]+`组成,则将其抽象为'\*'  
         - args中所有参数的值抽象为'\*'  
-        - 函数返回包含两个元素的元组，分别为url抽象结果和参数部分抽象结果
+        - 函数返回包含两个元素的元组，分别为url抽象结果和参数部分抽象结果  
     [python.functions.text_abstract()](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/functions.py#L58)
     ```
     >>> text_abstract('/user/100/article/5')
@@ -57,7 +57,9 @@ This project is a collection of **scripts(shell or python)** and **python code s
 	>>> text_abstract('/user/article/5?commentid=10')
 	('/user/article/*', 'commentid=*')
     ```
- 6. 监控服务器网卡流量，可同时监控多块网卡
+ 6. 监控服务器网卡流量，可同时监控多块网卡  
      [python.netflow-statics.py](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/netflow-statics.py)
+     ![1](https://s1.51cto.com/wyfs02/M02/81/FD/wKiom1dGuoqS6honAAA8gQMh4e8068.png)
+     ![2](https://s2.51cto.com/wyfs02/M02/81/FC/wKioL1dGu5HDfYfbAABaNXTdogo428.png)
 
  
