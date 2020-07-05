@@ -57,6 +57,15 @@ This project is a collection of **scripts(shell or python)** and **python code s
 	>>> text_abstract('/user/article/5?commentid=10')
 	('/user/article/*', 'commentid=*')
     ```
+6. 高效的日期时间转换思路，例如：将nginx日志中的时间格式转换成202001011010这种格式  
+    经简单测试，可见完成任务自定义函数的耗时仅为time模块的约1/7,为datetime模块的约1/4
+    [python.functions.convert_time()](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/functions.py#L89)
+    ```
+    >>> convert_time('22/Jul/2018:14:02:07','time_local')
+    ('20180722', '14', '02')
+    >>> convert_time('2019-02-28T02:04:04+08:00', 'time_iso8601')
+    ('20190228', '02', '04')
+    ```
  6. 监控服务器网卡流量，可同时监控多块网卡  
      [python.netflow-statics.py](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/netflow-statics.py)   
      ![example](https://s2.51cto.com/wyfs02/M02/81/FC/wKioL1dGu5HDfYfbAABaNXTdogo428.png)  
