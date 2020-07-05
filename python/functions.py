@@ -84,3 +84,20 @@ def text_abstract(text, site=None):
     for i in re.findall('/[0-9_-]+(?=[/.]|$)', uri):
         uri = uri.replace(i, '/*', 1)
     return uri, re.sub('=[^&=]+', '=*', args)
+
+
+def convert_time(t_value, t_type):
+    """将nginx中time_local或time_iso8601格式的时间转换为201902250101格式
+    返回元组 (date,hour,minute)"""
+    month_dict = {'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'Jun': '06',
+              'Jul': '07', 'Aug': '08', 'Sep': '09', 'Oct': '10', 'Nov': '11', 'Dec': '12'}
+    if t_type == 'time_local':
+        _time_local = t_value.split(':')
+        _d_m_y = _time_local[0].split('/')
+        date = _d_m_y[2] + month_dict[_d_m_y[1]] + _d_m_y[0]  # 将20/Feb/2019转为20190220格式
+        return date, _time_local[1], _time_local[2]
+    if t_type == 'time_iso8601':
+        _time_local = t_value.split('T')
+        _date = _time_local[0].split('-')
+        _time = _time_local[1].split(':')
+        return ''.join(_date), _time[0], _time[1]
