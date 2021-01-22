@@ -68,18 +68,14 @@ This project is a collection of **scripts(shell or python)** and **python code s
     ```
  7. 监控服务器网卡流量，可同时监控多块网卡  
      [python.netflow-statics.py](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/netflow-statics.py)   
-     ![example](https://s2.51cto.com/wyfs02/M02/81/FC/wKioL1dGu5HDfYfbAABaNXTdogo428.png) 
      ```
-     [jk.li@ops ~]$ netflow-statics.py eth0
+     [jk.li@ops ~]$ python3 /tmp/tt eth0 bond0
      start monitoring,press "ctrl+c" to stop
 
-     ------eth0 bandwidth(Mb/s)------   
-     IN: 0.47      OUT: 2.06            
-     IN: 0.62      OUT: 2.98            
-     IN: 0.7       OUT: 3.3             
-     IN: 0.51      OUT: 2.15            
-     IN: 0.57      OUT: 2.57            
-     IN: 0.55      OUT: 2.61            
+     ------eth0 bandwidth(Mb/s)------   ------bond0 bandwidth(Mb/s)------  
+     IN: 0.89      OUT: 2.87            IN: 0.89      OUT: 2.87            
+     IN: 0.56      OUT: 2.64            IN: 0.56      OUT: 2.64            
+     IN: 0.54      OUT: 2.42            IN: 0.54      OUT: 2.42            
      ^C
      -----bye-----
      ```
