@@ -68,7 +68,21 @@ This project is a collection of **scripts(shell or python)** and **python code s
     ```
  7. 监控服务器网卡流量，可同时监控多块网卡  
      [python.netflow-statics.py](https://github.com/jkklee/Ljk-ops-utilities/blob/master/python/netflow-statics.py)   
-     ![example](https://s2.51cto.com/wyfs02/M02/81/FC/wKioL1dGu5HDfYfbAABaNXTdogo428.png)  
+     ![example](https://s2.51cto.com/wyfs02/M02/81/FC/wKioL1dGu5HDfYfbAABaNXTdogo428.png) 
+     ```
+     [jk.li@ops ~]$ netflow-statics.py eth0
+     start monitoring,press "ctrl+c" to stop
+
+     ------eth0 bandwidth(Mb/s)------   
+     IN: 0.47      OUT: 2.06            
+     IN: 0.62      OUT: 2.98            
+     IN: 0.7       OUT: 3.3             
+     IN: 0.51      OUT: 2.15            
+     IN: 0.57      OUT: 2.57            
+     IN: 0.55      OUT: 2.61            
+     ^C
+     -----bye-----
+     ```
  8. 封装Linux echo命令，方便打印彩色字体   
      [shell/color_echo.sh](https://github.com/jkklee/Ljk-ops-utilities/blob/master/shell/color_echo.sh)  
      ![example](https://img-blog.csdnimg.cn/20200705092753329.png)   
